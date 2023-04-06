@@ -20,7 +20,7 @@ export function usePostPaging({ extrasParam = {} }) {
       setLoading(false);
     });
   }
-  
+
   function showButtonLoadMore() {
     return (
       hasMorePost && (
@@ -38,6 +38,4 @@ export function usePostPaging({ extrasParam = {} }) {
     posts,
     showButtonLoadMore,
   };
-
 }
-

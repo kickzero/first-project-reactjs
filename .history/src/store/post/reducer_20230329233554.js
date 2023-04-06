@@ -9,6 +9,8 @@ const initState = {
     totalPages: 1, 
     total: 0
   },
+  currentPage: 1,
+  totalPage: 0,
   articlesDetail: null,
   articlesRelated: [],
 }

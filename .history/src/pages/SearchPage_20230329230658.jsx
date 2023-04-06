@@ -4,8 +4,7 @@ import { useLocation } from 'react-router-dom';
 import ArticleItem from '../components/ArticleItem';
 import MainTitle from '../components/shared/MainTitle';
 import { usePostPaging } from '../hooks/usePostPaging';
-import { actFetchArticlePagingAsync } from '../store/post/action';
-
+import { actFetchArticlePagingAsync } from '../store/post/actions';
 
 function SearchPage() {
   const location = useLocation();

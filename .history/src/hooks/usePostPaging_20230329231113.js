@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Button from '../components/shared/Button';
 import { actFetchArticlePagingAsync } from '../store/post/action';
 
+
 export function usePostPaging({ extrasParam = {} }) {
   const posts = useSelector((state) => state.POST.articlesPaging.list);
   const currentPage = useSelector((state) => state.POST.articlesPaging.currentPage);
@@ -20,7 +21,7 @@ export function usePostPaging({ extrasParam = {} }) {
       setLoading(false);
     });
   }
-  
+
   function showButtonLoadMore() {
     return (
       hasMorePost && (
@@ -38,6 +39,4 @@ export function usePostPaging({ extrasParam = {} }) {
     posts,
     showButtonLoadMore,
   };
-
 }
-

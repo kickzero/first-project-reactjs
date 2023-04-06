@@ -52,13 +52,13 @@ export function actFetchArticlePolularAsync(){
 }
 
 //action creator
-export function actFetchArticlePaging(posts, page, totalPages, total) {
+export function actFetchArticlePaging(posts, page, totalPage, total) {
   return {
     type: ACT_FETCH_ARTICLES_PAGING,
     payload: {
       posts,
       page, 
-      totalPages, 
+      totalPage, 
       total
     }
   }
@@ -72,8 +72,8 @@ export function actFetchArticlePagingAsync(page = 1, extrasParam = {}){
     const data = response.data;
     const posts = data.map(mappingPostData);
     const total = response.headers['x-wp-total'];
-    const totalPages = response.headers['x-wp-totalpages'];
-    dispatch(actFetchArticlePaging(posts, page, totalPages, total));
+    const totalPage = response.headers['x-wp-totalpages'];
+    dispatch(actFetchArticlePaging(posts, page, totalPage, total));
   }
 }
 

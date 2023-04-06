@@ -1,5 +1,0 @@
-const postService = {
-  getArticlesLatest(){
-    
-  }
-}

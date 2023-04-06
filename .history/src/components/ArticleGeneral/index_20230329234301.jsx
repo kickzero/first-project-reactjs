@@ -8,11 +8,11 @@ import MainTitle from '../shared/MainTitle';
 function ArticleGeneral() {
   const dispatch = useDispatch();
   const params = { extrasParam: { per_page: 2}}
-  const { posts, showButtonLoadMore } = usePostPaging(params);
+  const { posts, showButtonLoadMore } = usePostPaging({ extrasParam: {per_page: 2}});
   
   useEffect(() => {
     dispatch(actFetchArticlePagingAsync(1, params.extrasParam));
-  }, [dispatch])
+  }, [dispatch, params.extrasParam])
   
   return (
     <div className="articles-list section">

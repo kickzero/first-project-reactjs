@@ -6,9 +6,11 @@ const initState = {
   articlesPaging: {
     list: [],
     currentPage: 1,
-    totalPages: 1, 
+    totalPage: 1, 
     total: 0
   },
+  currentPage: 1,
+  totalPage: 0,
   articlesDetail: null,
   articlesRelated: [],
 }
@@ -33,7 +35,7 @@ function reducer(state = initState, action) {
           list:
             action.payload.page === 1 ? action.payload.posts : [...state.articlesPaging.list, ...action.payload.posts],
           currentPage: action.payload.page,
-          totalPages: action.payload.totalPages,
+          totalPage: action.payload.totalPage,
           total: action.payload.total,
         },
       };

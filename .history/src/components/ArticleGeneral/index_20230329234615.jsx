@@ -12,7 +12,7 @@ function ArticleGeneral() {
   
   useEffect(() => {
     dispatch(actFetchArticlePagingAsync(1, params.extrasParam));
-  }, [dispatch])
+  }, [dispatch, params.extrasParam])
   
   return (
     <div className="articles-list section">

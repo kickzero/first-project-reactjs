@@ -6,12 +6,12 @@ import { actFetchArticlePagingAsync } from '../store/post/action';
 export function usePostPaging({ extrasParam = {} }) {
   const posts = useSelector((state) => state.POST.articlesPaging.list);
   const currentPage = useSelector((state) => state.POST.articlesPaging.currentPage);
-  const totalPages = useSelector((state) => state.POST.articlesPaging.totalPages);
+  const totalPage = useSelector((state) => state.POST.articlesPaging.totalPage);
   const total = useSelector((state) => state.POST.articlesPaging.total);
   const [loading, setLoading] = useState(false);
   const dispatch = useDispatch();
 
-  const hasMorePost = currentPage < totalPages;
+  const hasMorePost = currentPage < totalPage;
 
   function handleLoadMore() {
     if (loading) return;
@@ -23,8 +23,7 @@ export function usePostPaging({ extrasParam = {} }) {
   
   function showButtonLoadMore() {
     return (
-      hasMorePost && (
-        <div className="text-center">
+      hasMorePost && (<div className="text-center">
           <Button type="primary" size="large" loading={loading} onClick={handleLoadMore}>
             Tải thêm
           </Button>
@@ -37,7 +36,7 @@ export function usePostPaging({ extrasParam = {} }) {
     total,
     posts,
     showButtonLoadMore,
-  };
+  }
 
 }
 
