@@ -26,7 +26,7 @@ function App() {
   },[dispatch] );
 
   return (
-    <BrowserRouter basename='/tothepoint_login'>
+    <BrowserRouter basename='/'>
       <div className="wrapper-content">
         <Header />
         <Switch>
