@@ -2,7 +2,7 @@ import './post-author.css';
 
 function PostDetailAuthor({post}) {
   const { authorName } = post;
-{`${process.env.PUBLIC_URL}/assets/images/logo.png`}
+
   return (
     <div className="post-author">
       <div className="post-author__bg-avatar">
