@@ -25,7 +25,9 @@ export function actFetchArticleLatestAsync(){
   return async (dispatch) => {
     const response = await postService.getArticlesLatest();
     const data = response.data;
+    console.log("data", data)
     const posts = data.map(mappingPostData);
+    console.log("posts", posts)
     dispatch(actFetchArticleLatest(posts));
   }
 }

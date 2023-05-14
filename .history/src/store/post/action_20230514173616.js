@@ -25,7 +25,9 @@ export function actFetchArticleLatestAsync(){
   return async (dispatch) => {
     const response = await postService.getArticlesLatest();
     const data = response.data;
+    console.log("data", data)
     const posts = data.map(mappingPostData);
+    console.log("posts", posts)
     dispatch(actFetchArticleLatest(posts));
   }
 }
@@ -52,13 +54,13 @@ export function actFetchArticlePolularAsync(){
 }
 
 //action creator
-export function actFetchArticlePaging(posts, page, totalPage, total) {
+export function actFetchArticlePaging(posts, page, totalPages, total) {
   return {
     type: ACT_FETCH_ARTICLES_PAGING,
     payload: {
       posts,
       page, 
-      totalPage, 
+      totalPages, 
       total
     }
   }
@@ -72,8 +74,8 @@ export function actFetchArticlePagingAsync(page = 1, extrasParam = {}){
     const data = response.data;
     const posts = data.map(mappingPostData);
     const total = response.headers['x-wp-total'];
-    const totalPage = response.headers['x-wp-totalpages'];
-    dispatch(actFetchArticlePaging(posts, page, totalPage, total));
+    const totalPages = response.headers['x-wp-totalpages'];
+    dispatch(actFetchArticlePaging(posts, page, totalPages, total));
   }
 }
 

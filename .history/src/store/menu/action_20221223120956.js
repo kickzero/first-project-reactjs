@@ -20,7 +20,6 @@ export function actGetMenusAsync() {
   return async (dispatch) => {
 
     const response = await menuService.getAll({});
-    console.log("response.data", response.data)
     const menus = response.data.items.map(mappingMenuData);
     
     dispatch(actGetMenus(menus));
