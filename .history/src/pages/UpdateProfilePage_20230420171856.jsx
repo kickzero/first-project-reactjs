@@ -10,6 +10,7 @@ function UpdateProfilePage() {
   const dispatch = useDispatch();
 
   const [selectedFile, setSelectedFile] = useState(null);
+  
   function handleChangeValue(event) {
     setSelectedFile(event.target.files[0]);
   }
@@ -19,9 +20,11 @@ function UpdateProfilePage() {
     if (!selectedFile) {
       return;
     }
-    const formDatas = new FormData();
-    formDatas.append('file', selectedFile);
-    dispatch(actUpdateProfileAsync(formDatas)).then((res) => {
+    const formData = new FormData();
+    
+    formData.append('files', selectedFile);
+    console.log(formData, "formData")
+    dispatch(actUpdateProfileAsync(formData)).then((res) => {
     });
   }
 
@@ -33,7 +36,7 @@ function UpdateProfilePage() {
           <div className="tcl-col-12 tcl-col-sm-6 block-center">
             <h1 className="form-title text-center">Cập nhật hồ sơ</h1>
             <div className="form-login-register">
-              {formError && <p style={{ color: 'red', textAlign: 'center' }}>{formError}</p>}
+              
               <form autoComplete="off" onSubmit={handleSubmit}>
                 {selectedFile && <img src={URL.createObjectURL(selectedFile)} />}
                 <Input
@@ -41,13 +44,12 @@ function UpdateProfilePage() {
                     label="Hình ảnh"
                     name="simple_local_avatar"
                     placeholder="Nhập Avatar"
-                    value={formData.simple_local_avatar}
                     autoComplete="off"
                     onChange={handleChangeValue}
                   />
 
                 <div className="d-flex tcl-jc-between tcl-ais-center">
-                  <Button type="primary" size="large" loading={loading}>
+                  <Button type="primary" size="large">
                     Xác nhận
                   </Button>
                 </div>

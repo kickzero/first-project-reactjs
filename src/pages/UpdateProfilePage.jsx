@@ -10,6 +10,7 @@ function UpdateProfilePage() {
   const dispatch = useDispatch();
 
   const [selectedFile, setSelectedFile] = useState(null);
+  
   function handleChangeValue(event) {
     setSelectedFile(event.target.files[0]);
   }
@@ -20,7 +21,9 @@ function UpdateProfilePage() {
       return;
     }
     const formData = new FormData();
+    
     formData.append('file', selectedFile);
+    console.log(formData, "formData")
     dispatch(actUpdateProfileAsync(formData)).then((res) => {
     });
   }
