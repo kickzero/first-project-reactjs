@@ -26,7 +26,7 @@ function App() {
   },[dispatch] );
 
   return (
-    <BrowserRouter basename='/'>
+    <BrowserRouter basename='/project-blog-reactjs'>
       <div className="wrapper-content">
         <Header />
         <Switch>
