@@ -6,7 +6,10 @@ function HeaderLogo() {
       {/* Logo */}
       <div className="header-logo">
         <Link to="/">
-          <img src={`${process.env.PUBLIC_URL}/assets/images/logo.png`} alt="Go to homepage" />
+          <img src="/assets/images/blog-detail.jpg" alt="Go to homepage" />
+        </Link>
+        <Link to="/">
+          <img src="/assets/images/blog-detail.jpg" alt="Go to homepage" />
         </Link>
       </div>
     </div>

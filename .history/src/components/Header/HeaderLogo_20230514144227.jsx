@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
 
+import style from '../../assets/images/logo.png'
+
 function HeaderLogo() {
   return (
     <div className="tcl-col-2">
