@@ -6,7 +6,7 @@ export default function ArticleItemAvatar({ authorAvatar, authorName}) {
         {authorAvatar ? (
           <img src={authorAvatar} alt={authorName} />
         ) : (
-          <img src="assets/images/john-doe.png" alt={authorName} />
+          <img src={`${process.env.PUBLIC_URL}/assets/images/john-doe.png`} alt={authorName} />
         )}
 
       </a>
