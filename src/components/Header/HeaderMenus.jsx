@@ -44,12 +44,12 @@ function HeaderMenus() {
         <ul className="header-nav__lists">
           {!currentUser && <li className="user">
             <Link to="/login">
-              <i className="icons ion-person" /> Tài khoản
+             <ion-icon name="person"></ion-icon> Tài khoản
             </Link>
           </li>}
           {currentUser && <li className="user">
             <Link to="/login" >
-              <i className="icons ion-person" /> {currentUser.name}
+              <ion-icon name="person"></ion-icon> {currentUser.name}
             </Link>
             <ul>
               <li>
